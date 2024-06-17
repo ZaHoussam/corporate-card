@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+/* * Add Colors */
+:root {
+  --primary-color: #6c4693;
+  --secondary-color: #454694;
+  --light-color: #fafafa;
+  --dark-color: #212121;
+  --bg-color: #65a8e8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 660px;
+  height: 374px;
+  border-radius: 25px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.card .face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    45deg,
+    var(--secondary-color) 5%,
+    var(--primary-color) 100%
+  );
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.8s;
+  z-index: 1;
+}
+
+.card:hover .face {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card .face img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.card .face .title {
+  color: var(--light-color);
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  width: 250px;
+  position: relative;
+  font-size: 34px;
+}
+
+.card .face .title::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: var(--light-color);
+  left: 0;
+  bottom: -20px;
+  border-radius: 10px;
+}
+
+.card .back {
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-color);
+  padding: 20px;
+  color: var(--dark-color);
+  position: relative;
+}
+
+.card .back::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 5px;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    45deg,
+    var(--secondary-color) 5%,
+    var(--primary-color) 100%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+}
+
+.card .back .top {
+  text-transform: capitalize;
+}
+
+.card .back .top .title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.card .back .top .subtitle {
+  font-size: 26px;
+  font-weight: normal;
+}
+
+.card .back .bottom{
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+}
+
+.card .back .bottom .contact{
+    list-style-type: none;
+    font-size: 24px;
+    line-height: 1.5;
+}
